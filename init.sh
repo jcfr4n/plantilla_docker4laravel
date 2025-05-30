@@ -2,6 +2,14 @@
 
 ENV_FILE="./docker/.env.docker"
 
+# Nombre y password de usuario de la base de datos
+DB_USERNAME="dbuser"
+DB_PASSWORD="dbuser"
+DB_ROOT_PASSWORD="root"
+
+# Detectar nombre del directorio actual
+CURRENT_DIR=$(basename "$PWD")
+
 echo "Levantando contenedores sin rebuild..."
 docker-compose --env-file "$ENV_FILE" up -d
 echo ""
